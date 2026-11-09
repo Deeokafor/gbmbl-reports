@@ -1,0 +1,257 @@
+{
+  "June 2026": {
+    "report_title": "Sales Summary Report",
+    "period_from": "06/01/2026",
+    "period_to": "06/30/2026",
+    "generated_at": "2026-11-09T16:43:22.086123",
+    "customers": [
+      {
+        "name": "KADEM PHARMACY",
+        "amount": 11982922.0,
+        "tax": 0.0,
+        "share_pct": 57.7
+      },
+      {
+        "name": "MR ONUAH OKECHUKWU JOHN",
+        "amount": 5566490.0,
+        "tax": 0.0,
+        "share_pct": 26.8
+      },
+      {
+        "name": "MR EKWESCO",
+        "amount": 1680300.0,
+        "tax": 0.0,
+        "share_pct": 8.09
+      },
+      {
+        "name": "IHITE OBOMA",
+        "amount": 690000.0,
+        "tax": 0.0,
+        "share_pct": 3.32
+      },
+      {
+        "name": "MR ODOGWU NA EPEMPE",
+        "amount": 680000.0,
+        "tax": 0.0,
+        "share_pct": 3.27
+      },
+      {
+        "name": "MR STAGER CHOCCOMI",
+        "amount": 45000.0,
+        "tax": 0.0,
+        "share_pct": 0.22
+      },
+      {
+        "name": "MR GOD IS ABLE",
+        "amount": 40000.0,
+        "tax": 0.0,
+        "share_pct": 0.19
+      },
+      {
+        "name": "ANYICO",
+        "amount": 40000.0,
+        "tax": 0.0,
+        "share_pct": 0.19
+      },
+      {
+        "name": "BISHOP CHERRUBIM",
+        "amount": 39500.0,
+        "tax": 0.0,
+        "share_pct": 0.19
+      },
+      {
+        "name": "BELLYZ PLAZA",
+        "amount": 4000.0,
+        "tax": 0.0,
+        "share_pct": 0.02
+      },
+      {
+        "name": "MR BUKASON",
+        "amount": 0.0,
+        "tax": 0.0,
+        "share_pct": 0.0
+      },
+      {
+        "name": "OFFICE USE",
+        "amount": 0.0,
+        "tax": 0.0,
+        "share_pct": 0.0
+      }
+    ],
+    "total_sales": 20768212.0
+  },
+  "July 2026": {
+    "report_title": "Sales Summary Report",
+    "period_from": "07/01/2026",
+    "period_to": "07/31/2026",
+    "generated_at": "2026-11-09T16:43:22.451279",
+    "customers": [
+      {
+        "name": "MR. WISDOM",
+        "amount": 1964589.0,
+        "tax": 0.0,
+        "share_pct": 24.57
+      },
+      {
+        "name": "ABUJA",
+        "amount": 1900000.0,
+        "tax": 0.0,
+        "share_pct": 23.76
+      },
+      {
+        "name": "ONYEMA UGWU HILDA C.         08038122436",
+        "amount": 1852990.0,
+        "tax": 0.0,
+        "share_pct": 23.17
+      },
+      {
+        "name": "IFECHUKWU ODIRI ELIJAH       08033957474",
+        "amount": 1200000.0,
+        "tax": 0.0,
+        "share_pct": 15.01
+      },
+      {
+        "name": "MR UDOKA",
+        "amount": 745670.0,
+        "tax": 0.0,
+        "share_pct": 9.33
+      },
+      {
+        "name": "MR IBETO BETKING",
+        "amount": 210990.0,
+        "tax": 0.0,
+        "share_pct": 2.64
+      },
+      {
+        "name": "MR ROBISON",
+        "amount": 69190.0,
+        "tax": 0.0,
+        "share_pct": 0.87
+      },
+      {
+        "name": "KADEM PHARMACY",
+        "amount": 40000.0,
+        "tax": 0.0,
+        "share_pct": 0.5
+      },
+      {
+        "name": "OFFICE USE",
+        "amount": 13000.0,
+        "tax": 0.0,
+        "share_pct": 0.16
+      }
+    ],
+    "total_sales": 7996429.0
+  },
+  "August 2026": {
+    "report_title": "Sales Summary Report",
+    "period_from": "08/01/2026",
+    "period_to": "08/31/2026",
+    "generated_at": "2026-11-09T16:43:22.759252",
+    "customers": [
+      {
+        "name": "ONYEMA UGWU HILDA C.         08038122436",
+        "amount": 3770900.0,
+        "tax": 0.0,
+        "share_pct": 23.04
+      },
+      {
+        "name": "BARR. OBINNA EZEIFE",
+        "amount": 3454880.0,
+        "tax": 0.0,
+        "share_pct": 21.11
+      },
+      {
+        "name": "IFECHUKWU ODIRI ELIJAH       08033957474",
+        "amount": 3419000.0,
+        "tax": 0.0,
+        "share_pct": 20.89
+      },
+      {
+        "name": "VICTOR",
+        "amount": 2500000.0,
+        "tax": 0.0,
+        "share_pct": 15.27
+      },
+      {
+        "name": "MR UDOKA",
+        "amount": 2167000.0,
+        "tax": 0.0,
+        "share_pct": 13.24
+      },
+      {
+        "name": "ANYICO",
+        "amount": 707800.0,
+        "tax": 0.0,
+        "share_pct": 4.32
+      },
+      {
+        "name": "MRS CHIZOBA                  08169152000",
+        "amount": 300000.0,
+        "tax": 0.0,
+        "share_pct": 1.83
+      },
+      {
+        "name": "Oracle Transnkissi",
+        "amount": 48490.0,
+        "tax": 0.0,
+        "share_pct": 0.3
+      },
+      {
+        "name": "KADEM PHARMACY",
+        "amount": 0.0,
+        "tax": 0.0,
+        "share_pct": 0.0
+      },
+      {
+        "name": "OFFICE USE",
+        "amount": 0.0,
+        "tax": 0.0,
+        "share_pct": 0.0
+      },
+      {
+        "name": "MR IBETO BETKING",
+        "amount": 0.0,
+        "tax": 0.0,
+        "share_pct": 0.0
+      }
+    ],
+    "total_sales": 16368070.0
+  },
+  "September 2026": {
+    "report_title": "Sales Summary Report",
+    "period_from": "09/01/2026",
+    "period_to": "09/30/2026",
+    "generated_at": "2026-11-09T16:43:23.215391",
+    "customers": [
+      {
+        "name": "DR. CHINWE",
+        "amount": 21251900.0,
+        "tax": 0.0,
+        "share_pct": 80.94
+      },
+      {
+        "name": "TEMPO",
+        "amount": 5005712.0,
+        "tax": 0.0,
+        "share_pct": 19.06
+      }
+    ],
+    "total_sales": 26257612.0
+  },
+  "October 2026": {
+    "report_title": "Sales Summary Report",
+    "period_from": "10/01/2026",
+    "period_to": "10/31/2026",
+    "generated_at": "2026-11-09T16:43:23.520135",
+    "customers": [
+      {
+        "name": "MR. CASMIR",
+        "amount": 4717456.0,
+        "tax": 0.0,
+        "share_pct": 100.0
+      }
+    ],
+    "total_sales": 4717456.0
+  }
+}

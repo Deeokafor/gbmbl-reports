@@ -1,0 +1,97 @@
+name: Weekly ERP Data Sync & Deploy
+
+on:
+  # Run every Sunday at 23:59 UTC (against the new week)
+  schedule:
+    - cron: '59 23 * * 0'
+  # Allow manual trigger anytime from the GitHub Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Fetch Live Data from FrontAccounting ERP
+        env:
+          username: ${{ secrets.ERP_USERNAME }}
+          password: ${{ secrets.ERP_PASSWORD }}
+        run: |
+          python -c "
+          import os, json
+          from src.erp_extractor import FrontAccountingScraper
+          
+          # Only run scraper if secrets are present
+          if os.getenv('username') and os.getenv('password'):
+              scraper = FrontAccountingScraper()
+              scraper.login()
+              months = [
+                  ('June 2026', '06/01/2026', '06/30/2026'),
+                  ('July 2026', '07/01/2026', '07/31/2026'),
+                  ('August 2026', '08/01/2026', '08/31/2026'),
+                  ('September 2026', '09/01/2026', '09/30/2026'),
+                  ('October 2026', '10/01/2026', '10/31/2026'),
+                  ('November 2026', '11/01/2026', '11/30/2026')
+              ]
+              all_data = {}
+              for label, start, end in months:
+                  try:
+                      all_data[label] = scraper.fetch_sales_summary(start, end)
+                  except Exception as e:
+                      print(f'Error fetching {label}: {e}')
+              
+              if all_data:
+                  with open('data/historical_sales.json', 'w') as f:
+                      json.dump(all_data, f, indent=2)
+                  with open('public/data/historical_sales.json', 'w') as f:
+                      json.dump(all_data, f, indent=2)
+                  print('Successfully updated sales data from ERP!')
+          else:
+              print('ERP secrets not set yet, using existing committed data.')
+          "
+
+      - name: Commit Updated Data (if changed)
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Sync"
+          git add data/ public/data/ raw_exports/ || true
+          git diff --staged --quiet || git commit -m "Auto-sync ERP sales data [skip ci]"
+          git push origin main || true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,19 @@
+# Environment & Secrets (NEVER COMMIT CREDENTIALS)
+.env
+*.env
+.env.*
+
+# Python caches & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Backup folder (keep local)
+backups/

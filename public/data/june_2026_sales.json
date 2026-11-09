@@ -1,0 +1,81 @@
+{
+  "report_title": "Sales Summary Report",
+  "period_from": "06/01/2026",
+  "period_to": "06/30/2026",
+  "generated_at": "2026-11-09T16:34:53.421283",
+  "customers": [
+    {
+      "name": "KADEM PHARMACY",
+      "amount": 11982922.0,
+      "tax": 0.0,
+      "share_pct": 57.7
+    },
+    {
+      "name": "MR ONUAH OKECHUKWU JOHN",
+      "amount": 5566490.0,
+      "tax": 0.0,
+      "share_pct": 26.8
+    },
+    {
+      "name": "MR EKWESCO",
+      "amount": 1680300.0,
+      "tax": 0.0,
+      "share_pct": 8.09
+    },
+    {
+      "name": "IHITE OBOMA",
+      "amount": 690000.0,
+      "tax": 0.0,
+      "share_pct": 3.32
+    },
+    {
+      "name": "MR ODOGWU NA EPEMPE",
+      "amount": 680000.0,
+      "tax": 0.0,
+      "share_pct": 3.27
+    },
+    {
+      "name": "MR STAGER CHOCCOMI",
+      "amount": 45000.0,
+      "tax": 0.0,
+      "share_pct": 0.22
+    },
+    {
+      "name": "MR GOD IS ABLE",
+      "amount": 40000.0,
+      "tax": 0.0,
+      "share_pct": 0.19
+    },
+    {
+      "name": "ANYICO",
+      "amount": 40000.0,
+      "tax": 0.0,
+      "share_pct": 0.19
+    },
+    {
+      "name": "BISHOP CHERRUBIM",
+      "amount": 39500.0,
+      "tax": 0.0,
+      "share_pct": 0.19
+    },
+    {
+      "name": "BELLYZ PLAZA",
+      "amount": 4000.0,
+      "tax": 0.0,
+      "share_pct": 0.02
+    },
+    {
+      "name": "MR BUKASON",
+      "amount": 0.0,
+      "tax": 0.0,
+      "share_pct": 0.0
+    },
+    {
+      "name": "OFFICE USE",
+      "amount": 0.0,
+      "tax": 0.0,
+      "share_pct": 0.0
+    }
+  ],
+  "total_sales": 20768212.0
+}

@@ -1,0 +1,29 @@
+Sales Summary Report
+
+
+
+
+Print Out Date:       11/09/2026 03:10 pm                                goodeybestmultibiz.com.ng
+Fiscal Year:          01/01/2026 - 12/31/2026 (Active)                   Divine Okafor-udah
+Period:               06/01/2026 - 06/30/2026
+Tax Id Only:          No                                                                             Page 1
+
+Customer                     Tax Id               Total ex. Tax   Tax
+
+Balances in Home Currency
+
+MR STAGER CHOCCOMI                                  45,000.00     0.00
+MR EKWESCO                                       1,680,300.00     0.00
+MR GOD IS ABLE                                      40,000.00     0.00
+MR BUKASON                                               0.00     0.00
+MR ODOGWU NA EPEMPE                                680,000.00     0.00
+BELLYZ PLAZA                                         4,000.00     0.00
+KADEM PHARMACY                                  11,982,922.00     0.00
+MR ONUAH OKECHUKWU JOHN                          5,566,490.00     0.00
+ANYICO                                              40,000.00     0.00
+OFFICE USE                                               0.00     0.00
+BISHOP CHERRUBIM                                    39,500.00     0.00
+IHITE OBOMA                                        690,000.00     0.00
+
+Total                                           20,768,212.00     0.00
+
