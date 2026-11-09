@@ -1,0 +1,26 @@
+Sales Summary Report
+
+
+
+
+Print Out Date:       11/09/2026 07:57 pm                                goodeybestmultibiz.com.ng
+Fiscal Year:          01/01/2026 - 12/31/2026 (Active)                   Divine Okafor-udah
+Period:               07/01/2026 - 07/31/2026
+Tax Id Only:          No                                                                             Page 1
+
+Customer                     Tax Id               Total ex. Tax   Tax
+
+Balances in Home Currency
+
+KADEM PHARMACY                                       40,000.00    0.00
+ONYEMA UGWU HILDA C.         08038122436          1,852,990.00    0.00
+OFFICE USE                                           13,000.00    0.00
+ABUJA                                             1,900,000.00    0.00
+MR. WISDOM                                        1,964,589.00    0.00
+MR UDOKA                                            745,670.00    0.00
+MR IBETO BETKING                                    210,990.00    0.00
+MR ROBISON                                           69,190.00    0.00
+IFECHUKWU ODIRI ELIJAH       08033957474          1,200,000.00    0.00
+
+Total                                             7,996,429.00    0.00
+

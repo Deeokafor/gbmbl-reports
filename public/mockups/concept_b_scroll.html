@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup Preview: Concept B (Unified Scroll) - Goodey Best Multibiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+</head>
+<body class="bg-slate-100 p-6 text-slate-800">
+  <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+    <!-- Header -->
+    <div class="px-8 py-5 border-b border-slate-200 flex items-center justify-between bg-white">
+      <div class="flex items-center space-x-3.5">
+        <img src="../assets/logo.svg" class="h-9 w-auto">
+        <div>
+          <h1 class="text-base font-bold text-slate-900 leading-tight">Goodey Best Multibiz</h1>
+          <p class="text-xs font-medium text-slate-400">Executive Master Financial Pulse</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span class="text-xs bg-slate-100 font-bold px-3 py-1.5 rounded-lg text-slate-700">June 2026</span>
+        <span class="text-xs bg-blue-600 text-white font-semibold px-3 py-1.5 rounded-lg">Sync ERP</span>
+      </div>
+    </div>
+
+    <!-- Body: Unified Single View -->
+    <div class="p-8 space-y-6">
+      
+      <!-- Top Combined Executive Cards -->
+      <div class="grid grid-cols-4 gap-4">
+        <!-- 1. Total Revenue -->
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <p class="text-xs text-slate-400 font-semibold uppercase">Total Revenue</p>
+          <h3 class="text-2xl font-extrabold text-slate-900 mt-1">₦20.76M</h3>
+          <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded mt-2 inline-block">▲ +24.5% vs May</span>
+        </div>
+
+        <!-- 2. Net Profit (From P&L) -->
+        <div class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-200">
+          <p class="text-xs text-emerald-700 font-semibold uppercase">Net Profit (Bottom Line)</p>
+          <h3 class="text-2xl font-extrabold text-emerald-900 mt-1">₦4.28M</h3>
+          <span class="text-xs text-emerald-800 font-bold bg-emerald-100 px-2 py-0.5 rounded mt-2 inline-block">20.6% Profit Margin</span>
+        </div>
+
+        <!-- 3. Total Unpaid Debtors -->
+        <div class="bg-amber-50/60 p-4 rounded-2xl border border-amber-200">
+          <p class="text-xs text-amber-700 font-semibold uppercase">Business Debtors (Owed)</p>
+          <h3 class="text-2xl font-extrabold text-amber-900 mt-1">₦6.82M</h3>
+          <span class="text-xs text-amber-800 font-bold bg-amber-100 px-2 py-0.5 rounded mt-2 inline-block">⚠ ₦1.4M Overdue >60d</span>
+        </div>
+
+        <!-- 4. Active Accounts -->
+        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <p class="text-xs text-slate-400 font-semibold uppercase">Active Customers</p>
+          <h3 class="text-2xl font-extrabold text-slate-900 mt-1">10 Accounts</h3>
+          <span class="text-xs text-slate-400 mt-2 inline-block">₦2.07M Avg / Account</span>
+        </div>
+      </div>
+
+      <!-- Side-by-Side: Profitability vs Debtors Risk -->
+      <div class="grid grid-cols-2 gap-5">
+        <!-- P&L Breakdown Card -->
+        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50">
+          <h4 class="text-sm font-bold text-slate-900 mb-1">Profit & Loss Waterfall</h4>
+          <p class="text-xs text-slate-500 mb-4">How revenue turns into take-home profit</p>
+          <div class="space-y-2.5 text-xs">
+            <div class="flex justify-between font-bold"><span>Total Sales:</span><span>₦20,768,212</span></div>
+            <div class="flex justify-between text-rose-600"><span>- Cost of Goods Sold (COGS):</span><span>-₦14,120,000</span></div>
+            <div class="flex justify-between font-bold text-blue-700 pt-1 border-t border-slate-200"><span>= Gross Profit:</span><span>₦6,648,212 (32%)</span></div>
+            <div class="flex justify-between text-rose-600"><span>- Operating Expenses:</span><span>-₦2,365,000</span></div>
+            <div class="flex justify-between font-extrabold text-emerald-700 pt-1 border-t border-slate-200 text-sm"><span>= Net Profit:</span><span>₦4,283,212</span></div>
+          </div>
+        </div>
+
+        <!-- Debtors Aging Breakdown Card -->
+        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50">
+          <h4 class="text-sm font-bold text-slate-900 mb-1">Debtors Aging & Cashflow Risk</h4>
+          <p class="text-xs text-slate-500 mb-4">How long customers have owed money</p>
+          <!-- Stacked aging bar -->
+          <div class="w-full h-4 rounded-full overflow-hidden flex bg-slate-200 mb-3">
+            <div class="bg-emerald-500 h-full" style="width: 50%" title="Current (0-30d): ₦3.4M"></div>
+            <div class="bg-blue-500 h-full" style="width: 25%" title="31-60d: ₦1.7M"></div>
+            <div class="bg-amber-500 h-full" style="width: 15%" title="61-90d: ₦1.0M"></div>
+            <div class="bg-rose-500 h-full" style="width: 10%" title="90d+ Critical: ₦0.7M"></div>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span><span class="text-slate-600">Current (0-30d): <strong>₦3.4M</strong></span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span><span class="text-slate-600">31-60 Days: <strong>₦1.7M</strong></span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span><span class="text-slate-600">61-90 Days: <strong>₦1.0M</strong></span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span><span class="text-slate-600">90+ Days: <strong>₦700k</strong></span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+Profit and Loss Statement
+
+
+
+
+Print Out Date:              11/09/2026 07:57 pm                                    goodeybestmultibiz.com.ng
+Fiscal Year:                 01/01/2026 - 12/31/2026 (Active)                       Divine Okafor-udah
+Period:                      09/01/2026 - 09/30/2026                                                            Page 1
+
+Account           Account Name                                      Period   Accumulated      Achieved %
+
+Income
+Sales Revenue
+4010              Sales                                         26,257,612    70,830,323             37.1
+4011              Sales: Services                                        0       560,000              0.0
+
+Total Sales Revenue                                             26,257,612    71,390,323             36.8
+Other Revenue
+4500              Prompt Payment Discounts                              0         -5,000              0.0
+
+Total Other Revenue                                                     0         -5,000              0.0
+
+Total Income                                                    26,257,612    71,385,323             36.8
+
+Costs
+Cost of Goods Sold
+5010              Cost of Goods Sold - Retail                   17,199,451    55,641,073             30.9
+5040              Purchase price Variance                         -329,600    -9,147,987              3.6
+
+Total Cost of Goods Sold                                        16,869,851    46,493,086             36.3
+General & Administrative expenses
+5030              Work Materials                                   24,500      6,650,300              0.4
+5410              Wages & Salaries                                495,200        499,200             99.2
+5411              Sanitation                                            0          5,000              0.0
+5610              Legal & Professional Fees                        22,203        137,203             16.2
+5620              Bad Debts                                             0        193,182              0.0
+5660              Amortization Expense                                  0         20,000              0.0
+5690              Bank Charges                                        300            300            100.0
+5700              Office Supplies                                       0        203,000              0.0
+5760              Rent                                                  0         70,000              0.0
+5765              Repair & Maintenance                             50,622        201,622             25.1
+5780              Transportation                                  299,300        880,800             34.0
+5785              Travel & Entertainment                           10,000         15,000             66.7
+5790              Utilities (Electricity, Internet, Water)         86,500        153,900             56.2
+5800              Software & Subscriptions                              0         35,000              0.0
+
+Total General & Administrative expenses                           988,625      9,064,507             10.9
+
+Total Costs                                                     17,858,475    55,557,593             32.1
+
+Calculated Return                                                8,399,137    15,827,730             53.1
+

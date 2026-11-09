@@ -62,7 +62,7 @@ jobs:
               all_data = {}
               for label, start, end in months:
                   try:
-                      all_data[label] = scraper.fetch_sales_summary(start, end)
+                      all_data[label] = scraper.fetch_full_monthly_bundle(start, end)
                   except Exception as e:
                       print(f'Error fetching {label}: {e}')
               

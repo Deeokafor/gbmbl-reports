@@ -1,0 +1,43 @@
+Profit and Loss Statement
+
+
+
+
+Print Out Date:              11/09/2026 07:57 pm                                    goodeybestmultibiz.com.ng
+Fiscal Year:                 01/01/2026 - 12/31/2026 (Active)                       Divine Okafor-udah
+Period:                      06/01/2026 - 06/30/2026                                                            Page 1
+
+Account           Account Name                                      Period   Accumulated      Achieved %
+
+Income
+Sales Revenue
+4010              Sales                                         20,738,212    20,738,212            100.0
+4011              Sales: Services                                   30,000        30,000            100.0
+
+Total Sales Revenue                                             20,768,212    20,768,212            100.0
+
+Total Income                                                    20,768,212    20,768,212            100.0
+
+Costs
+Cost of Goods Sold
+5010              Cost of Goods Sold - Retail                   11,606,000    11,606,000            100.0
+5040              Purchase price Variance                       -1,600,000    -1,600,000            100.0
+
+Total Cost of Goods Sold                                        10,006,000    10,006,000            100.0
+General & Administrative expenses
+5030              Work Materials                                 5,896,900     5,896,900            100.0
+5410              Wages & Salaries                                   4,000         4,000            100.0
+5411              Sanitation                                         5,000         5,000            100.0
+5620              Bad Debts                                        193,182       193,182            100.0
+5700              Office Supplies                                   73,000        73,000            100.0
+5760              Rent                                              70,000        70,000            100.0
+5765              Repair & Maintenance                              58,500        58,500            100.0
+5780              Transportation                                   299,600       299,600            100.0
+5785              Travel & Entertainment                             5,000         5,000            100.0
+5790              Utilities (Electricity, Internet, Water)           9,000         9,000            100.0
+
+Total General & Administrative expenses                          6,614,182     6,614,182            100.0
+Total Costs                                                     16,620,182    16,620,182            100.0
+
+Calculated Return                                                4,148,030     4,148,030            100.0
+

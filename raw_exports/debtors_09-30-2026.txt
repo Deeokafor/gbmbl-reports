@@ -1,0 +1,219 @@
+Aged Customer Analysis
+
+
+
+
+Print Out Date:        11/09/2026 07:57 pm                                                     goodeybestmultibiz.com.ng
+Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                        Divine Okafor-udah
+End Date:              09/30/2026
+Customer:              All
+Currency:              Balances in Home Currency
+Type:                  Detailed Report
+Show Also Allocated:   No
+Suppress Zeros:        No                                                                                                   Page 1
+
+Customer                      Currency             Current       1-30 Days     31-60 Days    Over 60 Days   Total Balance
+
+ABUJA                         NGN                     0.00            0.00            0.00   1,900,000.00   1,900,000.00
+
+Sales Invoice          025/2026 07/13/2026            0.00            0.00            0.00   1,900,000.00   1,900,000.00
+
+AMARACHI                      NGN                     0.00        -3,000.00           0.00      -7,500.00     -10,500.00
+
+Customer Payment       019/2026 07/09/2026            0.00             0.00           0.00      -2,500.00       -2,500.00
+Customer Payment       023/2026 07/09/2026            0.00             0.00           0.00      -5,000.00       -5,000.00
+Customer Payment       018/2026 09/19/2026            0.00        -3,000.00           0.00           0.00       -3,000.00
+
+ANYICO                        NGN                     0.00            0.00     707,800.00       40,000.00     747,800.00
+
+Sales Invoice          013/2026 06/02/2026            0.00            0.00           0.00       40,000.00      40,000.00
+Sales Invoice          037/2026 08/25/2026            0.00            0.00     707,800.00            0.00     707,800.00
+
+BARR. OBINNA EZEIFE NGN                               0.00            0.00    3,454,880.00           0.00   3,454,880.00
+
+Sales Invoice          033/2026 08/03/2026            0.00            0.00    3,454,880.00           0.00   3,454,880.00
+
+BELLYZ PLAZA                  NGN                     0.00            0.00            0.00       4,000.00       4,000.00
+
+Sales Invoice          020/2026 06/04/2026            0.00            0.00            0.00       4,000.00       4,000.00
+
+BISHOP CHERRUBIM              NGN                     0.00            0.00            0.00           0.00           0.00
+
+Sales Invoice          023/2026 06/30/2026            0.00            0.00            0.00      39,500.00      39,500.00
+Customer Payment       009/2026 06/30/2026            0.00            0.00            0.00     -39,500.00     -39,500.00
+
+DR. APITI CHURCH              NGN                     0.00            0.00            0.00     -67,000.00     -67,000.00
+
+Customer Payment       007/2026 06/23/2026            0.00            0.00            0.00     -67,000.00     -67,000.00
+
+DR. CHINWE                    NGN                     0.00     -748,100.00            0.00           0.00    -748,100.00
+
+Sales Invoice          047/2026 09/12/2026            0.00    21,251,900.00           0.00           0.00 21,251,900.00
+Customer Payment       015/2026 09/12/2026            0.00   -22,000,000.00           0.00           0.00 -22,000,000.00
+
+IFEANYI KENEDY                NGN                     0.00        -8,000.00           0.00           0.00       -8,000.00
+
+Customer Payment       020/2026 09/30/2026            0.00        -8,000.00           0.00           0.00       -8,000.00
+
+IFECHUKWU ODIRI ELIJAHNGN                             0.00            0.00    3,419,000.00   1,200,000.00   4,619,000.00
+Aged Customer Analysis
+
+
+
+
+Print Out Date:        11/09/2026 07:57 pm                                                 goodeybestmultibiz.com.ng
+Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                    Divine Okafor-udah
+End Date:              09/30/2026
+Customer:              All
+Currency:              Balances in Home Currency
+Type:                  Detailed Report
+Show Also Allocated:   No
+Suppress Zeros:        No                                                                                                Page 2
+
+Customer                      Currency             Current   1-30 Days     31-60 Days    Over 60 Days    Total Balance
+
+
+
+Sales Invoice          034/2026 07/25/2026            0.00        0.00           0.00    1,200,000.00    1,200,000.00
+Sales Invoice          038/2026 08/25/2026            0.00        0.00   3,419,000.00            0.00    3,419,000.00
+
+IHITE OBOMA                   NGN                     0.00        0.00           0.00      690,000.00      690,000.00
+
+Sales Invoice          024/2026 06/24/2026            0.00        0.00           0.00      690,000.00      690,000.00
+
+KADEM PHARMACY                NGN                     0.00        0.00   -2,500,000.00   6,522,922.00    4,022,922.00
+
+Sales Invoice          002/2026 06/14/2026            0.00        0.00            0.00      644,926.00      644,926.00
+Sales Invoice          003/2026 06/14/2026            0.00        0.00            0.00      208,900.00      208,900.00
+Sales Invoice          004/2026 06/14/2026            0.00        0.00            0.00      640,000.00      640,000.00
+Sales Invoice          005/2026 06/14/2026            0.00        0.00            0.00       32,320.00       32,320.00
+Customer Payment       008/2026 06/14/2026            0.00        0.00            0.00   -3,000,000.00   -3,000,000.00
+Sales Invoice          018/2026 06/15/2026            0.00        0.00            0.00    7,500,000.00    7,500,000.00
+Sales Invoice          016/2026 06/22/2026            0.00        0.00            0.00      252,000.00      252,000.00
+Sales Invoice          015/2026 06/22/2026            0.00        0.00            0.00       54,776.00       54,776.00
+Sales Invoice          017/2026 06/23/2026            0.00        0.00            0.00      150,000.00      150,000.00
+Sales Invoice          021/2026 07/01/2026            0.00        0.00            0.00       40,000.00       40,000.00
+Customer Payment       017/2026 08/17/2026            0.00        0.00   -2,500,000.00            0.00   -2,500,000.00
+
+MANAGER                       NGN                     0.00   -7,796.25           0.00            0.00        -7,796.25
+
+Customer Payment       021/2026 09/28/2026            0.00   -7,796.25           0.00            0.00        -7,796.25
+
+MARY IFEOMA NWAOBUNGN                                 0.00        0.00     -24,000.00            0.00      -24,000.00
+
+Customer Payment       022/2026 08/09/2026            0.00        0.00     -24,000.00            0.00      -24,000.00
+
+MR BUKASON                    NGN                     0.00        0.00           0.00      -40,000.00      -40,000.00
+
+Customer Payment       003/2026 07/19/2026            0.00        0.00           0.00      -40,000.00      -40,000.00
+
+MR EKWESCO                    NGN                     0.00        0.00           0.00          300.00          300.00
+
+Customer Payment       004/2026 06/12/2026            0.00        0.00           0.00      -200,000.00     -200,000.00
+Customer Payment       010/2026 06/12/2026            0.00        0.00           0.00    -1,000,000.00   -1,000,000.00
+Sales Invoice          009/2026 06/13/2026            0.00        0.00           0.00     1,500,000.00    1,500,000.00
+Sales Invoice          010/2026 06/13/2026            0.00        0.00           0.00       180,300.00      180,300.00
+Customer Payment       011/2026 06/30/2026            0.00        0.00           0.00      -480,000.00     -480,000.00
+
+MR IBETO BETKING              NGN                     0.00        0.00    -267,990.00      210,990.00      -57,000.00
+Aged Customer Analysis
+
+
+
+
+Print Out Date:        11/09/2026 07:57 pm                                                goodeybestmultibiz.com.ng
+Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                   Divine Okafor-udah
+End Date:              09/30/2026
+Customer:              All
+Currency:              Balances in Home Currency
+Type:                  Detailed Report
+Show Also Allocated:   No
+Suppress Zeros:        No                                                                                               Page 3
+
+Customer                      Currency             Current   1-30 Days    31-60 Days    Over 60 Days    Total Balance
+
+
+
+Sales Invoice          029/2026 07/28/2026            0.00        0.00           0.00     210,990.00      210,990.00
+Customer Payment       014/2026 08/26/2026            0.00        0.00    -267,990.00           0.00     -267,990.00
+
+MR ODOGWU NA EPEMPENGN                                0.00        0.00           0.00     680,000.00      680,000.00
+
+Sales Invoice          014/2026 06/02/2026            0.00        0.00           0.00     680,000.00      680,000.00
+
+MR ONUAH OKECHUKWU JOHNNGN                            0.00        0.00           0.00     566,490.00      566,490.00
+
+Customer Payment       005/2026 06/12/2026            0.00        0.00           0.00   -5,000,000.00   -5,000,000.00
+Sales Invoice          006/2026 06/15/2026            0.00        0.00           0.00    3,368,300.00    3,368,300.00
+Sales Invoice          007/2026 06/15/2026            0.00        0.00           0.00      576,690.00      576,690.00
+Sales Invoice          008/2026 06/15/2026            0.00        0.00           0.00       21,500.00       21,500.00
+Sales Invoice          022/2026 06/15/2026            0.00        0.00           0.00    1,600,000.00    1,600,000.00
+
+MR ROBISON                    NGN                     0.00        0.00           0.00      69,190.00       69,190.00
+
+Sales Invoice          030/2026 07/14/2026            0.00        0.00           0.00      69,190.00       69,190.00
+
+MR STAGER CHOCCOMINGN                                 0.00        0.00           0.00           0.00            0.00
+
+Sales Invoice          011/2026 06/08/2026            0.00        0.00           0.00      45,000.00       45,000.00
+Customer Payment       001/2026 06/08/2026            0.00        0.00           0.00     -45,000.00      -45,000.00
+
+MR UDOKA                      NGN                     0.00        0.00   2,167,000.00     745,670.00    2,912,670.00
+
+Sales Invoice          028/2026 07/20/2026            0.00        0.00           0.00     745,670.00      745,670.00
+Sales Invoice          039/2026 08/25/2026            0.00        0.00   1,450,000.00           0.00    1,450,000.00
+Sales Invoice          040/2026 08/25/2026            0.00        0.00     717,000.00           0.00      717,000.00
+
+MR. WISDOM                    NGN                     0.00        0.00           0.00   1,964,589.00    1,964,589.00
+
+Sales Invoice          026/2026 07/18/2026            0.00        0.00           0.00   1,814,589.00    1,814,589.00
+Sales Invoice          027/2026 07/18/2026            0.00        0.00           0.00     150,000.00      150,000.00
+
+MRS CHIZOBA                   NGN                     0.00        0.00    300,000.00            0.00      300,000.00
+
+Sales Invoice          044/2026 08/21/2026            0.00        0.00    300,000.00            0.00      300,000.00
+
+OFFICE USE                    NGN                     0.00        0.00           0.00      13,000.00       13,000.00
+Aged Customer Analysis
+
+
+
+
+Print Out Date:        11/09/2026 07:57 pm                                                   goodeybestmultibiz.com.ng
+Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                      Divine Okafor-udah
+End Date:              09/30/2026
+Customer:              All
+Currency:              Balances in Home Currency
+Type:                  Detailed Report
+Show Also Allocated:   No
+Suppress Zeros:        No                                                                                                  Page 4
+
+Customer                      Currency             Current     1-30 Days     31-60 Days    Over 60 Days    Total Balance
+
+Sales Invoice          019/2026 07/01/2026            0.00           0.00           0.00      13,000.00       13,000.00
+
+ONYEMA UGWU HILDA C.NGN                               0.00           0.00           0.00   1,852,990.00    1,852,990.00
+
+Sales Invoice          032/2026 07/29/2026            0.00           0.00           0.00     352,990.00      352,990.00
+Sales Invoice          035/2026 07/29/2026            0.00           0.00           0.00   1,500,000.00    1,500,000.00
+
+Oracle Transnkissi            NGN                     0.00           0.00     48,490.00            0.00       48,490.00
+
+Sales Invoice          043/2026 08/03/2026            0.00           0.00     48,490.00            0.00       48,490.00
+
+SOCHIMA BENJAMINE OKOYONGN                            0.00           0.00           0.00   -1,350,000.00   -1,350,000.00
+
+Customer Payment       006/2026 06/22/2026            0.00           0.00           0.00   -1,350,000.00   -1,350,000.00
+
+TEMPO                         NGN                     0.00   5,005,712.00           0.00           0.00    5,005,712.00
+
+Sales Invoice          048/2026 09/25/2026            0.00   3,555,712.00           0.00           0.00    3,555,712.00
+Sales Invoice          049/2026 09/25/2026            0.00   1,450,000.00           0.00           0.00    1,450,000.00
+
+VICTOR                        NGN                     0.00           0.00   2,500,000.00           0.00    2,500,000.00
+
+Sales Invoice          045/2026 08/15/2026            0.00           0.00     300,000.00           0.00      300,000.00
+Sales Invoice          046/2026 08/28/2026            0.00           0.00   2,200,000.00           0.00    2,200,000.00
+
+Grand Total                                           0.00   4,238,815.75   9,805,180.00 14,995,641.00 29,039,636.75
+

@@ -45,8 +45,10 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
                 ]
                 all_data = {}
                 for label, start, end in months:
-                    all_data[label] = scraper.fetch_sales_summary(start, end)
+                    all_data[label] = scraper.fetch_full_monthly_bundle(start, end)
                 with open(HISTORICAL_JSON, "w") as f:
+                    json.dump(all_data, f, indent=2)
+                with open(os.path.join(PUBLIC_DIR, "data", "historical_sales.json"), "w") as f:
                     json.dump(all_data, f, indent=2)
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json")
