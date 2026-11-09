@@ -17,6 +17,13 @@ function formatShortNaira(num) {
   return '₦' + n.toLocaleString();
 }
 
+function getInitials(name) {
+  if (!name) return '??';
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
 async function initDashboard() {
   try {
     let res = await fetch('/api/data').catch(() => null);
@@ -58,9 +65,9 @@ function renderHistoricalTrend() {
       datasets: [{
         label: 'Sales (₦)',
         data: values,
-        backgroundColor: 'rgba(37, 99, 235, 0.85)',
-        hoverBackgroundColor: 'rgba(29, 78, 216, 1)',
-        borderRadius: 8,
+        backgroundColor: '#2563eb',
+        hoverBackgroundColor: '#1d4ed8',
+        borderRadius: 6,
         borderSkipped: false,
       }]
     },
@@ -70,11 +77,15 @@ function renderHistoricalTrend() {
       plugins: {
         legend: { display: false },
         tooltip: {
-          padding: 12,
-          boxPadding: 6,
+          backgroundColor: '#09090b',
+          titleFont: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: 'bold' },
+          bodyFont: { family: "'Plus Jakarta Sans', sans-serif", size: 12 },
+          padding: 10,
+          cornerRadius: 8,
+          boxPadding: 4,
           usePointStyle: true,
           callbacks: {
-            label: (ctx) => 'Sales: ' + formatNaira(ctx.raw)
+            label: (ctx) => ' Sales: ' + formatNaira(ctx.raw)
           }
         }
       },
@@ -83,13 +94,16 @@ function renderHistoricalTrend() {
           beginAtZero: true,
           ticks: {
             callback: (v) => '₦' + (v / 1000000).toFixed(1) + 'M',
-            font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" }
+            font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" },
+            color: '#71717a'
           },
-          grid: { color: '#f1f5f9' }
+          grid: { color: '#f4f4f5' },
+          border: { dash: [4, 4] }
         },
         x: {
           ticks: {
-            font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" }
+            font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" },
+            color: '#71717a'
           },
           grid: { display: false }
         }
@@ -114,15 +128,15 @@ function renderSelectedMonth() {
     if (prevTotal > 0) {
       const diff = ((monthData.total_sales - prevTotal) / prevTotal) * 100;
       const isUp = diff >= 0;
-      badge.className = `mt-3 inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md ${isUp ? 'text-emerald-700 bg-emerald-50 border border-emerald-100' : 'text-rose-700 bg-rose-50 border border-rose-100'}`;
-      badge.textContent = `${isUp ? '▲ +' : '▼ '}${Math.abs(diff).toFixed(1)}% ${isUp ? 'higher than' : 'lower than'} ${prevMonth}`;
+      badge.className = `inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md ${isUp ? 'text-emerald-700 bg-emerald-50 ring-1 ring-inset ring-emerald-600/20' : 'text-rose-700 bg-rose-50 ring-1 ring-inset ring-rose-600/20'}`;
+      badge.textContent = `${isUp ? '▲ +' : '▼ '}${Math.abs(diff).toFixed(1)}% vs ${prevMonth.split(' ')[0]}`;
     } else {
-      badge.className = 'mt-3 inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-slate-600 bg-slate-100';
-      badge.textContent = 'First recorded month';
+      badge.className = 'inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-zinc-600 bg-zinc-100 ring-1 ring-inset ring-zinc-500/10';
+      badge.textContent = 'First month';
     }
   } else {
-    badge.className = 'mt-3 inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-slate-600 bg-slate-100';
-    badge.textContent = 'First recorded month';
+    badge.className = 'inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-zinc-600 bg-zinc-100 ring-1 ring-inset ring-zinc-500/10';
+    badge.textContent = 'First month';
   }
 
   // 2. Profit & Loss (Take-Home Profit)
@@ -153,11 +167,11 @@ function renderSelectedMonth() {
   
   const urgentDebt = (debtors.days_31_60 || 0) + (debtors.over_60 || 0);
   if (urgentDebt > 0) {
-    document.getElementById('kpiDebtorsBadge').textContent = `⚠ ${formatShortNaira(urgentDebt)} overdue >30 days`;
-    document.getElementById('kpiDebtorsBadge').className = 'mt-3 inline-flex items-center text-xs font-bold text-amber-800 bg-amber-100/90 px-2 py-0.5 rounded-md';
+    document.getElementById('kpiDebtorsBadge').textContent = `⚠ ${formatShortNaira(urgentDebt)} >30d overdue`;
+    document.getElementById('kpiDebtorsBadge').className = 'inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-amber-700 bg-amber-50 ring-1 ring-inset ring-amber-600/20';
   } else {
-    document.getElementById('kpiDebtorsBadge').textContent = `✓ All debts under 30 days`;
-    document.getElementById('kpiDebtorsBadge').className = 'mt-3 inline-flex items-center text-xs font-bold text-emerald-800 bg-emerald-100/90 px-2 py-0.5 rounded-md';
+    document.getElementById('kpiDebtorsBadge').textContent = `✓ All debts current`;
+    document.getElementById('kpiDebtorsBadge').className = 'inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-emerald-700 bg-emerald-50 ring-1 ring-inset ring-emerald-600/20';
   }
   document.getElementById('lblUrgentDebts').textContent = formatNaira(urgentDebt);
 
@@ -178,7 +192,7 @@ function renderSelectedMonth() {
   document.getElementById('kpiActiveAccounts').textContent = `${activeCustomers.length} Accounts`;
   if (monthData.customers.length > 0 && monthData.customers[0].amount > 0) {
     const top = monthData.customers[0];
-    document.getElementById('kpiTopAccountShare').textContent = `Top: ${top.name} (${top.share_pct}%)`;
+    document.getElementById('kpiTopAccountShare').textContent = `Top account: ${top.name} (${top.share_pct}%)`;
   } else {
     document.getElementById('kpiTopAccountShare').textContent = 'No sales made';
   }
@@ -196,14 +210,37 @@ function renderSalesTable(monthData) {
   tbody.innerHTML = '';
   monthData.customers.forEach((c, idx) => {
     const tr = document.createElement('tr');
-    tr.className = 'hover:bg-slate-50/80 transition duration-150';
+    tr.className = 'hover:bg-zinc-50 transition-colors duration-150';
+    
+    // Rank badge styling
+    let rankBadge = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-zinc-100 text-zinc-600 font-semibold text-xs">${idx + 1}</span>`;
+    if (idx === 0) {
+      rankBadge = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-amber-100 text-amber-800 font-bold text-xs ring-1 ring-inset ring-amber-600/20">1</span>`;
+    } else if (idx === 1) {
+      rankBadge = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-200 text-slate-800 font-bold text-xs ring-1 ring-inset ring-slate-400/20">2</span>`;
+    } else if (idx === 2) {
+      rankBadge = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-orange-100 text-orange-800 font-bold text-xs ring-1 ring-inset ring-orange-600/20">3</span>`;
+    }
+
+    const initials = getInitials(c.name);
+
     tr.innerHTML = `
-      <td class="px-3 sm:px-6 py-4 font-semibold text-slate-400 text-xs">${idx + 1}</td>
-      <td class="px-3 sm:px-6 py-4 font-bold text-slate-800 break-words">${c.name}</td>
-      <td class="px-3 sm:px-6 py-4 text-right font-semibold text-slate-900 whitespace-nowrap">${formatNaira(c.amount)}</td>
-      <td class="px-3 sm:px-6 py-4 text-right font-medium text-slate-600 whitespace-nowrap">${c.share_pct}%</td>
+      <td class="px-4 sm:px-6 py-4">${rankBadge}</td>
+      <td class="px-4 sm:px-6 py-4">
+        <div class="flex items-center space-x-3">
+          <span class="inline-flex items-center justify-center h-8 w-8 rounded-lg bg-zinc-100 text-zinc-700 font-bold text-xs shrink-0 ring-1 ring-inset ring-zinc-950/5">
+            ${initials}
+          </span>
+          <div class="min-w-0">
+            <p class="font-semibold text-zinc-950 truncate">${c.name}</p>
+            <p class="text-xs text-zinc-500 font-normal">Customer Account</p>
+          </div>
+        </div>
+      </td>
+      <td class="px-4 sm:px-6 py-4 text-right font-semibold text-zinc-950 tabular-nums whitespace-nowrap">${formatNaira(c.amount)}</td>
+      <td class="px-4 sm:px-6 py-4 text-right font-medium text-zinc-600 tabular-nums whitespace-nowrap">${c.share_pct}%</td>
       <td class="hidden sm:table-cell px-6 py-4">
-        <div class="w-full max-w-[140px] bg-slate-100 rounded-full h-2 overflow-hidden">
+        <div class="w-full max-w-[140px] bg-zinc-100 rounded-full h-2 overflow-hidden ring-1 ring-inset ring-zinc-950/5">
           <div class="bg-blue-600 h-2 rounded-full transition-all duration-500" style="width: ${c.share_pct}%"></div>
         </div>
       </td>
@@ -216,29 +253,41 @@ function renderDebtorsTable(debtors) {
   const tbody = document.getElementById('debtorsTableBody');
   tbody.innerHTML = '';
   if (!debtors.customers || debtors.customers.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="5" class="text-center py-6 text-slate-400">No outstanding customer debts recorded for this period.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="5" class="text-center py-8 text-zinc-500">No outstanding customer debts recorded for this period.</td></tr>';
     return;
   }
   debtors.customers.forEach((c, idx) => {
     const tr = document.createElement('tr');
-    tr.className = 'hover:bg-amber-50/20 transition duration-150';
+    tr.className = 'hover:bg-zinc-50 transition-colors duration-150';
     const overdue30 = (c.days_31_60 || 0) + (c.over_60 || 0);
     const isCritical = (c.over_60 || 0) > 0;
     const isWarning = overdue30 > 0 && !isCritical;
     
-    let urgencyBadge = '<span class="inline-flex items-center text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Fresh (&lt;30d)</span>';
+    let urgencyBadge = '<span class="inline-flex items-center rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-600/20">Fresh (&lt;30d)</span>';
     if (isCritical) {
-      urgencyBadge = '<span class="inline-flex items-center text-[11px] font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded">Overdue &gt;60d</span>';
+      urgencyBadge = '<span class="inline-flex items-center rounded-md bg-rose-50 px-2 py-0.5 text-xs font-semibold text-rose-700 ring-1 ring-inset ring-rose-600/20">Overdue &gt;60d</span>';
     } else if (isWarning) {
-      urgencyBadge = '<span class="inline-flex items-center text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">31-60d Due</span>';
+      urgencyBadge = '<span class="inline-flex items-center rounded-md bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-700 ring-1 ring-inset ring-amber-600/20">31-60d Due</span>';
     }
 
+    const initials = getInitials(c.name);
+
     tr.innerHTML = `
-      <td class="px-3 sm:px-6 py-4 font-semibold text-slate-400 text-xs">${idx + 1}</td>
-      <td class="px-3 sm:px-6 py-4 font-bold text-slate-800 break-words">${c.name}</td>
-      <td class="px-3 sm:px-6 py-4 text-right font-bold text-slate-900 whitespace-nowrap">${formatNaira(c.total_owed)}</td>
-      <td class="px-3 sm:px-6 py-4 text-right font-semibold ${overdue30 > 0 ? 'text-amber-700' : 'text-slate-400'} whitespace-nowrap">${formatNaira(overdue30)}</td>
-      <td class="px-3 sm:px-6 py-4 text-center">${urgencyBadge}</td>
+      <td class="px-4 sm:px-6 py-4 font-semibold text-zinc-400 text-xs">${idx + 1}</td>
+      <td class="px-4 sm:px-6 py-4">
+        <div class="flex items-center space-x-3">
+          <span class="inline-flex items-center justify-center h-8 w-8 rounded-lg bg-zinc-100 text-zinc-700 font-bold text-xs shrink-0 ring-1 ring-inset ring-zinc-950/5">
+            ${initials}
+          </span>
+          <div class="min-w-0">
+            <p class="font-semibold text-zinc-950 truncate">${c.name}</p>
+            <p class="text-xs text-zinc-500 font-normal">Customer Account</p>
+          </div>
+        </div>
+      </td>
+      <td class="px-4 sm:px-6 py-4 text-right font-semibold text-zinc-950 tabular-nums whitespace-nowrap">${formatNaira(c.total_owed)}</td>
+      <td class="px-4 sm:px-6 py-4 text-right font-semibold ${overdue30 > 0 ? 'text-amber-700' : 'text-zinc-400'} tabular-nums whitespace-nowrap">${formatNaira(overdue30)}</td>
+      <td class="px-4 sm:px-6 py-4 text-center">${urgencyBadge}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -254,13 +303,13 @@ function setTableView(view) {
   if (view === 'sales') {
     salesView.classList.remove('hidden');
     debtorsView.classList.add('hidden');
-    btnSales.className = 'text-xs font-bold px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm transition';
-    btnDebtors.className = 'text-xs font-semibold px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition';
+    btnSales.className = 'text-xs font-semibold px-3 py-1.5 rounded-md bg-white text-zinc-950 shadow-xs transition';
+    btnDebtors.className = 'text-xs font-medium px-3 py-1.5 rounded-md text-zinc-600 hover:text-zinc-900 transition';
   } else {
     salesView.classList.add('hidden');
     debtorsView.classList.remove('hidden');
-    btnDebtors.className = 'text-xs font-bold px-3 py-1.5 rounded-md bg-white text-amber-900 shadow-sm transition';
-    btnSales.className = 'text-xs font-semibold px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition';
+    btnDebtors.className = 'text-xs font-semibold px-3 py-1.5 rounded-md bg-white text-zinc-950 shadow-xs transition';
+    btnSales.className = 'text-xs font-medium px-3 py-1.5 rounded-md text-zinc-600 hover:text-zinc-900 transition';
   }
 }
 
@@ -288,10 +337,10 @@ function renderDistributionChart(monthData) {
         data: data,
         backgroundColor: [
           '#2563eb',
-          '#38bdf8',
-          '#818cf8',
+          '#0284c7',
+          '#6366f1',
           '#f59e0b',
-          '#cbd5e1'
+          '#e4e4e7'
         ],
         borderWidth: 2,
         borderColor: '#ffffff'
@@ -304,13 +353,21 @@ function renderDistributionChart(monthData) {
         legend: {
           position: 'bottom',
           labels: {
-            boxWidth: 10,
+            boxWidth: 8,
+            boxHeight: 8,
+            usePointStyle: true,
             padding: 12,
-            font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" }
+            font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" },
+            color: '#52525b'
           }
         },
         tooltip: {
-          padding: 12,
+          backgroundColor: '#09090b',
+          titleFont: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: 'bold' },
+          bodyFont: { family: "'Plus Jakarta Sans', sans-serif", size: 12 },
+          padding: 10,
+          cornerRadius: 8,
+          boxPadding: 4,
           callbacks: {
             label: (ctx) => ` ${ctx.label}: ${formatNaira(ctx.raw)}`
           }
