@@ -3,7 +3,7 @@ Aged Customer Analysis
 
 
 
-Print Out Date:        11/09/2026 08:42 pm                                                  goodeybestmultibiz.com.ng
+Print Out Date:        11/09/2026 08:44 pm                                                  goodeybestmultibiz.com.ng
 Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                     Divine Okafor-udah
 End Date:              06/30/2026
 Customer:              All
@@ -61,7 +61,7 @@ MR ODOGWU NA EPEMPENGN                                0.00     680,000.00       
 
 
 
-Print Out Date:        11/09/2026 08:42 pm                                                  goodeybestmultibiz.com.ng
+Print Out Date:        11/09/2026 08:44 pm                                                  goodeybestmultibiz.com.ng
 Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                     Divine Okafor-udah
 End Date:              06/30/2026
 Customer:              All

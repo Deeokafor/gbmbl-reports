@@ -3,7 +3,7 @@ Aged Customer Analysis
 
 
 
-Print Out Date:        11/09/2026 08:42 pm                                                goodeybestmultibiz.com.ng
+Print Out Date:        11/09/2026 08:44 pm                                                goodeybestmultibiz.com.ng
 Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                   Divine Okafor-udah
 End Date:              10/31/2026
 Customer:              All
@@ -61,7 +61,7 @@ IFECHUKWU ODIRI ELIJAHNGN                             0.00        0.00          
 
 
 
-Print Out Date:        11/09/2026 08:42 pm                                                  goodeybestmultibiz.com.ng
+Print Out Date:        11/09/2026 08:44 pm                                                  goodeybestmultibiz.com.ng
 Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                     Divine Okafor-udah
 End Date:              10/31/2026
 Customer:              All
@@ -122,7 +122,7 @@ MR IBETO BETKING              NGN                     0.00           0.00       
 
 
 
-Print Out Date:        11/09/2026 08:42 pm                                                 goodeybestmultibiz.com.ng
+Print Out Date:        11/09/2026 08:44 pm                                                 goodeybestmultibiz.com.ng
 Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                    Divine Okafor-udah
 End Date:              10/31/2026
 Customer:              All
@@ -181,7 +181,7 @@ MRS CHIZOBA                   NGN                     0.00           0.00       
 
 
 
-Print Out Date:        11/09/2026 08:42 pm                                                   goodeybestmultibiz.com.ng
+Print Out Date:        11/09/2026 08:44 pm                                                   goodeybestmultibiz.com.ng
 Fiscal Year:           01/01/2026 - 12/31/2026 (Active)                                      Divine Okafor-udah
 End Date:              10/31/2026
 Customer:              All
