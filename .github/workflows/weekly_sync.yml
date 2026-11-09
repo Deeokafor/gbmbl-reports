@@ -40,6 +40,8 @@ jobs:
 
       - name: Fetch Live Data from FrontAccounting ERP
         env:
+          ERP_USERNAME: ${{ secrets.ERP_USERNAME }}
+          ERP_PASSWORD: ${{ secrets.ERP_PASSWORD }}
           username: ${{ secrets.ERP_USERNAME }}
           password: ${{ secrets.ERP_PASSWORD }}
         run: |
@@ -48,30 +50,44 @@ jobs:
           from src.erp_extractor import FrontAccountingScraper
           
           # Only run scraper if secrets are present
-          if os.getenv('username') and os.getenv('password'):
+          u = os.getenv('ERP_USERNAME') or os.getenv('username')
+          p = os.getenv('ERP_PASSWORD') or os.getenv('password')
+          if u and p:
+              print(f'Starting ERP sync with user: {u}...')
               scraper = FrontAccountingScraper()
-              scraper.login()
+              logged_in = scraper.login()
+              print(f'Login successful: {logged_in}')
+              if not logged_in:
+                  raise Exception('Failed to log into ERP with provided credentials')
+              
               months = [
                   ('June 2026', '06/01/2026', '06/30/2026'),
                   ('July 2026', '07/01/2026', '07/31/2026'),
                   ('August 2026', '08/01/2026', '08/31/2026'),
                   ('September 2026', '09/01/2026', '09/30/2026'),
-                  ('October 2026', '10/01/2026', '10/31/2026'),
-                  ('November 2026', '11/01/2026', '11/30/2026')
+                  ('October 2026', '10/01/2026', '10/31/2026')
               ]
               all_data = {}
               for label, start, end in months:
                   try:
-                      all_data[label] = scraper.fetch_full_monthly_bundle(start, end)
+                      bundle = scraper.fetch_full_monthly_bundle(start, end)
+                      # Only store if valid sales/total found
+                      if bundle and (bundle.get('total_sales', 0) > 0 or bundle.get('customers')):
+                          all_data[label] = bundle
+                          print(f'  ✓ {label}: Sales ₦{bundle.get(\"total_sales\", 0):,.0f}, Profit ₦{bundle.get(\"pnl\", {}).get(\"net_profit\", 0):,.0f}')
+                      else:
+                          print(f'  ⚠ {label}: Empty bundle returned')
                   except Exception as e:
-                      print(f'Error fetching {label}: {e}')
+                      print(f'  ✗ Error fetching {label}: {e}')
               
-              if all_data:
+              if len(all_data) >= 3:
                   with open('data/historical_sales.json', 'w') as f:
                       json.dump(all_data, f, indent=2)
                   with open('public/data/historical_sales.json', 'w') as f:
                       json.dump(all_data, f, indent=2)
-                  print('Successfully updated sales data from ERP!')
+                  print('Successfully verified and updated sales data from ERP!')
+              else:
+                  print(f'Warning: Only {len(all_data)} months parsed. Preserving existing data to prevent blanking.')
           else:
               print('ERP secrets not set yet, using existing committed data.')
           "

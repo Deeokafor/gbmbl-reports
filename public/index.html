@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-zinc-50 antialiased">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,92 +15,55 @@
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
-          boxShadow: {
-            'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-            'card': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .catalyst-card {
-      background-color: #ffffff;
-      border-radius: 1rem;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(24, 24, 27, 0.06);
-    }
-    @media print {
-      header, footer, #refreshBtn, .no-print {
-        display: none !important;
-      }
-      body {
-        background-color: #ffffff !important;
-      }
-      .catalyst-card {
-        box-shadow: none !important;
-        border: 1px solid #e4e4e7 !important;
-      }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
   </style>
 </head>
-<body class="min-h-full bg-zinc-50 text-zinc-900 flex flex-col selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-50 text-slate-800 min-h-screen antialiased flex flex-col">
 
-  <!-- Top Sticky Navigation (Catalyst App Bar Style) -->
-  <header class="bg-white border-b border-zinc-200/80 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-0 sm:h-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3.5">
+  <!-- Top Sticky Navigation -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-0 sm:h-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
       
-      <!-- Brand Logo & Title (Frameless Option B with Refined Hierarchy) -->
+      <!-- Brand Logo & Title -->
       <div class="flex items-center space-x-3.5">
         <img src="./assets/logo.svg" alt="Goodey Best Multibiz Logo" class="h-9 sm:h-10 w-auto object-contain shrink-0">
         <div class="min-w-0">
-          <div class="flex items-center space-x-2">
-            <h1 class="text-base sm:text-lg font-bold text-zinc-950 leading-tight tracking-tight truncate">Goodey Best Multibiz</h1>
-            <span class="inline-flex items-center rounded-md bg-zinc-100 px-1.5 py-0.5 text-[11px] font-semibold text-zinc-600 ring-1 ring-inset ring-zinc-500/10 hidden md:inline-flex">ERP Live</span>
-          </div>
-          <p class="text-xs font-medium text-zinc-500 truncate">Monthly Sales & Business Summary</p>
+          <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight truncate">Goodey Best Multibiz</h1>
+          <p class="text-xs font-medium text-slate-400 truncate">Monthly Sales & Business Summary</p>
         </div>
       </div>
       
-      <!-- Tactile Action Controls (Catalyst & Headless UI Inputs) -->
-      <div class="flex items-center justify-between sm:justify-end space-x-2.5 sm:space-x-3 w-full sm:w-auto">
-        
-        <!-- Month Picker (Custom Catalyst Styled Select) -->
-        <div class="relative flex-1 sm:flex-none min-w-[136px]">
-          <select id="monthSelect" onchange="renderSelectedMonth()" class="w-full appearance-none bg-white hover:bg-zinc-50 text-zinc-900 text-xs sm:text-sm font-semibold rounded-lg pl-3 pr-8 py-2 border border-zinc-300/80 shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition cursor-pointer">
+      <!-- Action Controls -->
+      <div class="flex items-center justify-between sm:justify-end space-x-2 sm:space-x-3 w-full sm:w-auto">
+        <!-- Month Picker -->
+        <div class="relative flex-1 sm:flex-none min-w-[130px]">
+          <select id="monthSelect" onchange="renderSelectedMonth()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold rounded-lg px-2.5 py-2 border-0 focus:ring-2 focus:ring-blue-600 transition cursor-pointer">
           </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5 text-zinc-400">
-            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
         </div>
 
-        <!-- Sync ERP Button (Catalyst Tactile Button) -->
-        <button onclick="refreshFromERP()" id="refreshBtn" class="inline-flex items-center justify-center space-x-1.5 sm:space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold px-3.5 sm:px-4 py-2 rounded-lg shadow-xs hover:shadow transition active:scale-[0.98] shrink-0 border border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/30">
-          <svg id="syncIcon" class="w-4 h-4 shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Sync ERP Button -->
+        <button onclick="refreshFromERP()" id="refreshBtn" class="inline-flex items-center justify-center space-x-1.5 sm:space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg shadow-sm transition active:scale-95 shrink-0">
+          <svg id="syncIcon" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
           <span id="syncText">Sync ERP</span>
         </button>
 
-        <!-- Print Button (Catalyst Neutral Button) -->
-        <button onclick="window.print()" class="no-print inline-flex items-center justify-center space-x-1.5 bg-white hover:bg-zinc-50 text-zinc-700 text-xs sm:text-sm font-semibold px-3 sm:px-3.5 py-2 rounded-lg border border-zinc-300/80 shadow-xs hover:shadow transition active:scale-[0.98] shrink-0">
-          <svg class="w-4 h-4 shrink-0 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Print Button -->
+        <button onclick="window.print()" class="inline-flex items-center justify-center space-x-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold px-2.5 sm:px-3 py-2 rounded-lg transition shrink-0">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
           </svg>
           <span class="hidden md:inline">Print / Save PDF</span>
         </button>
-
       </div>
     </div>
   </header>
@@ -108,166 +71,152 @@
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8 flex-1">
 
-    <!-- Row 1: The 4 Executive Financial KPI Cards (Catalyst Solid Surface Tokens) -->
+    <!-- Row 1: The 3 Core Executive Financial Pillars + Customers -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
       
       <!-- 1. Total Revenue -->
-      <div class="catalyst-card p-5 sm:p-6 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
         <div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs font-semibold text-zinc-500">Total Revenue</p>
-            <div id="kpiGrowthBadge" class="inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-zinc-600 bg-zinc-100 ring-1 ring-inset ring-zinc-500/10">
-              --
-            </div>
-          </div>
-          <h2 id="kpiTotalRevenue" class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 mt-2.5 tabular-nums break-words">₦0</h2>
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Total Revenue</p>
+          <h2 id="kpiTotalRevenue" class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1.5 break-words">₦0</h2>
         </div>
-        <p class="text-xs text-zinc-500 mt-3 font-normal">Total goods & services billed this month</p>
+        <div id="kpiGrowthBadge" class="mt-3 inline-flex items-center self-start text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">
+          --
+        </div>
       </div>
 
       <!-- 2. Take-Home Profit (P&L Net Profit) -->
-      <div class="catalyst-card p-5 sm:p-6 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between bg-emerald-50/30 border-emerald-100">
         <div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs font-semibold text-zinc-500">Take-Home Profit</p>
-            <div id="kpiProfitMarginBadge" class="inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-emerald-700 bg-emerald-50 ring-1 ring-inset ring-emerald-600/20">
-              --% of sales kept
-            </div>
-          </div>
-          <h2 id="kpiNetProfit" class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 mt-2.5 tabular-nums break-words">₦0</h2>
+          <p class="text-xs font-semibold uppercase tracking-wider text-emerald-700">Take-Home Profit</p>
+          <h2 id="kpiNetProfit" class="text-xl sm:text-2xl font-extrabold text-emerald-900 mt-1.5 break-words">₦0</h2>
         </div>
-        <p class="text-xs text-zinc-500 mt-3 font-normal">Real earnings after stock and expenses</p>
+        <div id="kpiProfitMarginBadge" class="mt-3 inline-flex items-center self-start text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md">
+          --% of sales kept
+        </div>
       </div>
 
       <!-- 3. Money Owed To Us (Business Debtors) -->
-      <div class="catalyst-card p-5 sm:p-6 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between bg-amber-50/30 border-amber-100">
         <div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs font-semibold text-zinc-500">Money Owed To Us</p>
-            <div id="kpiDebtorsBadge" class="inline-flex items-center text-xs font-semibold px-2 py-0.5 rounded-md text-amber-700 bg-amber-50 ring-1 ring-inset ring-amber-600/20">
-              Total customer balance
-            </div>
-          </div>
-          <h2 id="kpiTotalDebtors" class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 mt-2.5 tabular-nums break-words">₦0</h2>
+          <p class="text-xs font-semibold uppercase tracking-wider text-amber-700">Money Owed To Us</p>
+          <h2 id="kpiTotalDebtors" class="text-xl sm:text-2xl font-extrabold text-amber-900 mt-1.5 break-words">₦0</h2>
         </div>
-        <p class="text-xs text-zinc-500 mt-3 font-normal">Unpaid receivables currently outside</p>
+        <div id="kpiDebtorsBadge" class="mt-3 inline-flex items-center self-start text-xs font-bold text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded-md">
+          Total customer balance
+        </div>
       </div>
 
       <!-- 4. Customers Who Bought -->
-      <div class="catalyst-card p-5 sm:p-6 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
         <div>
-          <div class="flex items-center justify-between">
-            <p class="text-xs font-semibold text-zinc-500">Customers Who Bought</p>
-            <span class="inline-flex items-center text-xs font-medium text-zinc-500">Active Buyers</span>
-          </div>
-          <h2 id="kpiActiveAccounts" class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 mt-2.5 tabular-nums">0 Accounts</h2>
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Customers Who Bought</p>
+          <h2 id="kpiActiveAccounts" class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1.5">0</h2>
         </div>
-        <p id="kpiTopAccountShare" class="text-xs font-medium text-blue-600 mt-3 truncate">--</p>
+        <p id="kpiTopAccountShare" class="text-xs text-blue-600 font-medium mt-3 truncate">--</p>
       </div>
 
     </div>
 
     <!-- Row 2: Visual Health Strips: Profit Flow & Debt Urgency (Side-by-Side) -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       
       <!-- Where The Sales Money Went (Profit Breakdown) -->
-      <div class="catalyst-card p-5 sm:p-6 flex flex-col justify-between space-y-5">
+      <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-col justify-between space-y-4">
         <div>
           <div class="flex items-center justify-between">
-            <h3 class="text-sm sm:text-base font-semibold text-zinc-950">Where The Sales Money Went</h3>
-            <span class="text-xs font-medium text-zinc-400">Profit & Loss Summary</span>
+            <h3 class="text-sm sm:text-base font-bold text-slate-900">Where The Sales Money Went</h3>
+            <span class="text-xs text-slate-400 font-medium">Profit & Loss Summary</span>
           </div>
-          <p class="text-xs text-zinc-500 mt-0.5">How monthly revenue turned into take-home profit</p>
+          <p class="text-xs text-slate-500 mt-0.5">How revenue turned into take-home profit</p>
         </div>
 
-        <!-- 3-Segment Progress Bar -->
+        <!-- 3-Segment Visual Bar -->
         <div>
-          <div class="w-full h-3.5 rounded-full overflow-hidden flex bg-zinc-100 mb-3.5 ring-1 ring-inset ring-zinc-950/5">
-            <div id="barStockCost" class="bg-zinc-400 h-full transition-all duration-500" style="width: 50%" title="Stock Cost"></div>
+          <div class="w-full h-4 rounded-full overflow-hidden flex bg-slate-100 mb-3 shadow-inner">
+            <div id="barStockCost" class="bg-slate-400 h-full transition-all duration-500" style="width: 50%" title="Stock Cost"></div>
             <div id="barAdminCost" class="bg-rose-400 h-full transition-all duration-500" style="width: 30%" title="Running Costs"></div>
-            <div id="barProfit" class="bg-emerald-500 h-full transition-all duration-500" style="width: 20%" title="Take-Home Profit"></div>
+            <div id="barProfit" class="bg-emerald-500 h-full transition-all duration-500" style="width: 20%" title="Profit"></div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-            <div class="flex items-center space-x-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-zinc-400 shrink-0"></span>
-              <span class="text-zinc-600 truncate">Stock: <strong id="lblStockCost" class="text-zinc-950 font-semibold tabular-nums">₦0</strong></span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-400 shrink-0"></span>
+              <span class="text-slate-600 truncate">Stock: <strong id="lblStockCost" class="text-slate-900">₦0</strong></span>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-rose-400 shrink-0"></span>
-              <span class="text-zinc-600 truncate">Costs: <strong id="lblAdminCost" class="text-zinc-950 font-semibold tabular-nums">₦0</strong></span>
+              <span class="text-slate-600 truncate">Costs: <strong id="lblAdminCost" class="text-slate-900">₦0</strong></span>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
-              <span class="text-zinc-600 truncate">Profit: <strong id="lblProfit" class="text-emerald-700 font-semibold tabular-nums">₦0</strong></span>
+              <span class="text-slate-600 truncate">Profit: <strong id="lblProfit" class="text-emerald-700">₦0</strong></span>
             </div>
           </div>
         </div>
 
-        <div class="pt-3.5 border-t border-zinc-100 flex items-center justify-between text-xs">
-          <span class="text-zinc-500">Gross Margin (Before expenses):</span>
-          <span id="lblGrossMargin" class="font-semibold text-zinc-900 tabular-nums">--%</span>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-slate-500">Gross Margin (Before expenses):</span>
+          <span id="lblGrossMargin" class="font-bold text-slate-800">--%</span>
         </div>
       </div>
 
       <!-- How Long Debts Have Been Overdue (Debtors Aging) -->
-      <div class="catalyst-card p-5 sm:p-6 flex flex-col justify-between space-y-5">
+      <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-col justify-between space-y-4">
         <div>
           <div class="flex items-center justify-between">
-            <h3 class="text-sm sm:text-base font-semibold text-zinc-950">How Long Debts Have Been Due</h3>
-            <span class="text-xs font-medium text-zinc-400">Debtors Risk Status</span>
+            <h3 class="text-sm sm:text-base font-bold text-slate-900">How Long Debts Have Been Due</h3>
+            <span class="text-xs text-slate-400 font-medium">Debtors Risk Status</span>
           </div>
-          <p class="text-xs text-zinc-500 mt-0.5">Tracking unpaid money outside by aging bracket</p>
+          <p class="text-xs text-slate-500 mt-0.5">Tracking unpaid money outside</p>
         </div>
 
         <!-- Aging Health Bar -->
         <div>
-          <div class="w-full h-3.5 rounded-full overflow-hidden flex bg-zinc-100 mb-3.5 ring-1 ring-inset ring-zinc-950/5">
+          <div class="w-full h-4 rounded-full overflow-hidden flex bg-slate-100 mb-3 shadow-inner">
             <div id="barDebtCurrent" class="bg-emerald-500 h-full transition-all duration-500" style="width: 25%" title="Fresh (Under 30 days)"></div>
             <div id="barDebt30" class="bg-blue-500 h-full transition-all duration-500" style="width: 50%" title="1-30 Days"></div>
             <div id="barDebt60" class="bg-amber-500 h-full transition-all duration-500" style="width: 15%" title="31-60 Days"></div>
-            <div id="barDebtOver" class="bg-rose-500 h-full transition-all duration-500" style="width: 10%" title="Over 60 Days (Urgent)"></div>
+            <div id="barDebtOver" class="bg-rose-500 h-full transition-all duration-500" style="width: 10%" title="Over 60 Days (Follow Up)"></div>
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
-            <div class="flex items-center space-x-2">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+            <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
-              <span class="text-zinc-600 truncate">Current: <strong id="lblDebtCurrent" class="text-zinc-950 font-semibold tabular-nums">₦0</strong></span>
+              <span class="text-slate-600 truncate">Current: <strong id="lblDebtCurrent" class="text-slate-900">₦0</strong></span>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-              <span class="text-zinc-600 truncate">1-30d: <strong id="lblDebt30" class="text-zinc-950 font-semibold tabular-nums">₦0</strong></span>
+              <span class="text-slate-600 truncate">1-30d: <strong id="lblDebt30" class="text-slate-900">₦0</strong></span>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0"></span>
-              <span class="text-zinc-600 truncate">31-60d: <strong id="lblDebt60" class="text-zinc-950 font-semibold tabular-nums">₦0</strong></span>
+              <span class="text-slate-600 truncate">31-60d: <strong id="lblDebt60" class="text-slate-900">₦0</strong></span>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0"></span>
-              <span class="text-zinc-600 truncate">&gt;60d: <strong id="lblDebtOver" class="text-rose-700 font-semibold tabular-nums">₦0</strong></span>
+              <span class="text-slate-600 truncate">&gt;60d: <strong id="lblDebtOver" class="text-rose-700">₦0</strong></span>
             </div>
           </div>
         </div>
 
-        <div class="pt-3.5 border-t border-zinc-100 flex items-center justify-between text-xs">
-          <span class="text-zinc-500">Urgent Follow-Up (&gt;30 days):</span>
-          <span id="lblUrgentDebts" class="font-bold text-amber-700 tabular-nums">₦0</span>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-slate-500">Urgent Follow-Up (&gt;30 days):</span>
+          <span id="lblUrgentDebts" class="font-bold text-amber-700">₦0</span>
         </div>
       </div>
 
     </div>
 
-    <!-- Row 3: Month by Month Trajectory & Revenue Share (Charts) -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
+    <!-- Row 3: Month by Month Trajectory & Revenue Share (Existing Loved Charts) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       
       <!-- Multi-Month Revenue Trajectory -->
-      <div class="catalyst-card p-5 sm:p-6 lg:col-span-2 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-4 sm:p-6 lg:col-span-2 flex flex-col justify-between">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h3 class="text-sm sm:text-base font-semibold text-zinc-950">How Sales Changed Month by Month</h3>
-            <p class="text-xs text-zinc-500">Historical performance comparison from ERP</p>
+            <h3 class="text-sm sm:text-base font-bold text-slate-900">How Sales Changed Month by Month</h3>
+            <p class="text-xs text-slate-500">Comparison of sales across past months</p>
           </div>
-          <span class="inline-flex items-center rounded-md bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10">
-            Real ERP Data
-          </span>
+          <span class="text-[11px] sm:text-xs font-semibold text-blue-600 bg-blue-50 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap">Live from Software</span>
         </div>
         <div class="relative h-64 sm:h-72 w-full">
           <canvas id="trendChart"></canvas>
@@ -275,11 +224,11 @@
       </div>
 
       <!-- Where The Money Came From Doughnut -->
-      <div class="catalyst-card p-5 sm:p-6 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-col justify-between">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h3 class="text-sm sm:text-base font-semibold text-zinc-950">Where The Money Came From</h3>
-            <p class="text-xs text-zinc-500">Share of revenue by top accounts</p>
+            <h3 class="text-sm sm:text-base font-bold text-slate-900">Where The Money Came From</h3>
+            <p class="text-xs text-slate-500">Share of sales by top customers</p>
           </div>
         </div>
         <div class="relative h-64 sm:h-72 w-full flex items-center justify-center">
@@ -289,51 +238,51 @@
 
     </div>
 
-    <!-- Row 4: Customer Performance Ranking & Balances (Catalyst Data Table) -->
-    <div class="catalyst-card overflow-hidden">
-      <div class="p-4 sm:p-6 border-b border-zinc-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3.5">
+    <!-- Row 4: Customer Performance Ranking (Preserved & Enhanced with Debtors Toggle) -->
+    <div class="glass-card rounded-2xl overflow-hidden">
+      <div class="p-4 sm:p-6 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h3 class="text-sm sm:text-base font-semibold text-zinc-950">Customer Performance Ranking & Balances</h3>
-          <p class="text-xs text-zinc-500">Detailed breakdown of revenue contribution and accounts receivable</p>
+          <h3 class="text-sm sm:text-base font-bold text-slate-900">Customer Performance Ranking & Balances</h3>
+          <p class="text-xs text-slate-500">Sorted from highest revenue contributor to lowest</p>
         </div>
         
-        <!-- Toggle View: Sales vs Who Owes Money (Catalyst Segmented Control) -->
-        <div class="inline-flex rounded-lg bg-zinc-100 p-1 ring-1 ring-inset ring-zinc-200 self-start sm:self-auto">
-          <button id="viewBtnSales" onclick="setTableView('sales')" class="text-xs font-semibold px-3 py-1.5 rounded-md bg-white text-zinc-950 shadow-xs transition">Sales Ranking</button>
-          <button id="viewBtnDebtors" onclick="setTableView('debtors')" class="text-xs font-medium px-3 py-1.5 rounded-md text-zinc-600 hover:text-zinc-900 transition">Who Owes Money</button>
+        <!-- Toggle View: Sales vs Who Owes Money -->
+        <div class="inline-flex rounded-lg bg-slate-100 p-1 self-start sm:self-auto">
+          <button id="viewBtnSales" onclick="setTableView('sales')" class="text-xs font-bold px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm transition">Sales Ranking</button>
+          <button id="viewBtnDebtors" onclick="setTableView('debtors')" class="text-xs font-semibold px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition">Who Owes Money</button>
         </div>
       </div>
 
       <!-- Table View: Sales Mode -->
       <div id="tableSalesView" class="overflow-x-auto w-full">
-        <table class="w-full text-left text-xs sm:text-sm text-zinc-600">
-          <thead class="bg-zinc-50 text-[11px] sm:text-xs font-semibold text-zinc-500 border-b border-zinc-200/75">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-600">
+          <thead class="bg-slate-50/80 text-[11px] sm:text-xs uppercase font-semibold text-slate-400 border-b border-slate-100">
             <tr>
-              <th class="px-4 sm:px-6 py-3.5 w-14">Rank</th>
-              <th class="px-4 sm:px-6 py-3.5">Customer Name</th>
-              <th class="px-4 sm:px-6 py-3.5 text-right">Revenue</th>
-              <th class="px-4 sm:px-6 py-3.5 text-right">Share of Sales</th>
-              <th class="hidden sm:table-cell px-6 py-3.5 w-48">Contribution</th>
+              <th class="px-3 sm:px-6 py-3.5">#</th>
+              <th class="px-3 sm:px-6 py-3.5">Customer Name</th>
+              <th class="px-3 sm:px-6 py-3.5 text-right">Revenue</th>
+              <th class="px-3 sm:px-6 py-3.5 text-right">Share of Sales</th>
+              <th class="hidden sm:table-cell px-6 py-3.5">Contribution Bar</th>
             </tr>
           </thead>
-          <tbody id="customerTableBody" class="divide-y divide-zinc-100">
+          <tbody id="customerTableBody" class="divide-y divide-slate-100">
           </tbody>
         </table>
       </div>
 
       <!-- Table View: Debtors Mode (Hidden by default, 1-click toggle) -->
       <div id="tableDebtorsView" class="hidden overflow-x-auto w-full">
-        <table class="w-full text-left text-xs sm:text-sm text-zinc-600">
-          <thead class="bg-zinc-50 text-[11px] sm:text-xs font-semibold text-zinc-500 border-b border-zinc-200/75">
+        <table class="w-full text-left text-xs sm:text-sm text-slate-600">
+          <thead class="bg-amber-50/40 text-[11px] sm:text-xs uppercase font-semibold text-amber-800 border-b border-amber-100">
             <tr>
-              <th class="px-4 sm:px-6 py-3.5 w-14">#</th>
-              <th class="px-4 sm:px-6 py-3.5">Customer Name</th>
-              <th class="px-4 sm:px-6 py-3.5 text-right">Total Owed</th>
-              <th class="px-4 sm:px-6 py-3.5 text-right">Over 30 Days</th>
-              <th class="px-4 sm:px-6 py-3.5 text-center">Urgency</th>
+              <th class="px-3 sm:px-6 py-3.5">#</th>
+              <th class="px-3 sm:px-6 py-3.5">Customer Name</th>
+              <th class="px-3 sm:px-6 py-3.5 text-right">Total Owed</th>
+              <th class="px-3 sm:px-6 py-3.5 text-right">Over 30 Days</th>
+              <th class="px-3 sm:px-6 py-3.5 text-center">Urgency</th>
             </tr>
           </thead>
-          <tbody id="debtorsTableBody" class="divide-y divide-zinc-100">
+          <tbody id="debtorsTableBody" class="divide-y divide-slate-100">
           </tbody>
         </table>
       </div>
@@ -342,11 +291,11 @@
 
   </main>
 
-  <!-- Clean footer (Catalyst Style) -->
-  <footer class="border-t border-zinc-200/80 bg-white py-4 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs text-zinc-500">
-      <p>&copy; 2026 Goodey Best Multibiz Limited. Internal Executive Dashboard.</p>
-      <p class="flex items-center space-x-1.5">
+  <!-- Clean footer -->
+  <footer class="border-t border-slate-200 bg-white py-4 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
+      <p>&copy; 2026 Goodey Best Multibiz Limited.</p>
+      <p class="flex items-center space-x-1">
         <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
         <span>Connected to business software</span>
       </p>

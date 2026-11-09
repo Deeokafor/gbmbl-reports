@@ -29,8 +29,9 @@ class FrontAccountingScraper:
     def __init__(self):
         env = read_env()
         self.base_url = "https://goodeybestmultibiz.com.ng/erp"
-        self.username = env.get("username")
-        self.password = env.get("password")
+        # Support both .env file and environment variables (for GitHub Actions)
+        self.username = os.getenv("ERP_USERNAME") or os.getenv("username") or env.get("username")
+        self.password = os.getenv("ERP_PASSWORD") or os.getenv("password") or env.get("password")
         self.session = requests.Session()
         self.session.headers.update({
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
